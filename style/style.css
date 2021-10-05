@@ -197,9 +197,6 @@ ul{
         left: 1em;
         z-index: 999;
     }
-    .mobile-button-container.active img{
-        display: none;
-    }
     .mobile-button-close.active{
         display: flex;
         position: fixed;

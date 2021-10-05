@@ -5,26 +5,16 @@ const closeMenu = document.getElementById("mobile_Menu_close");
 const menuLogo = document.getElementById("mobile_logo");
 
 openMenu.addEventListener('click', function(){
-    if(menu.classList.contains("mobile-menu-links")){
-        menu.classList.remove("mobile-menu-links");
-        openMenu.style.display ="flex";
-        menuLogo.classList.remove("active");
-    }else{
         menu.classList.add("mobile-menu-links");
         closeMenu.classList.add("active");
         openMenu.style.display ="none";
         menuLogo.classList.add("active");
-    }
 });
 closeMenu.addEventListener('click', function(){
-    if(menu.classList.contains("mobile-menu-links")){
         menu.classList.remove("mobile-menu-links");
         closeMenu.classList.remove("active");
-        openMenu.style.display ="flex";
-        menuLogo.classList.remove("active");
-    }else{
         openMenu.style.display ="none";
-    }
+        menuLogo.classList.remove("active");
 });
 
 
