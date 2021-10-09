@@ -498,6 +498,9 @@ ul{
     {
         touch-action: manipulation; 
     }
+    .owl-prev,.owl-next{
+        display: none;
+    }
 }
 /*footer container content area*/
 footer{
