@@ -31,10 +31,12 @@ function validateEmail(){
     const inputEmail = email.value.trim();
     if(inputEmail === ''){
         sendErrorMessage(email, 'This must not be empty');
+        inputText.s
     }else if(!emailFormat(inputEmail)){
         sendErrorMessage(email, 'Please insert valid email');
     }else{
         sendSuccesfulMessage(email, 'Great job!');
+        email.value = "";
     }
 }
 function sendErrorMessage(input, message){
@@ -42,12 +44,14 @@ function sendErrorMessage(input, message){
     const span = validate.querySelector('span');
     validate.className = 'form-div errorMessage';
     span.innerText = message;
+    email.classList.add("input-error-border");
 }
 function sendSuccesfulMessage(input, message){
     const validate = input.parentElement;
     const span = validate.querySelector('span');
     validate.className = 'form-div successMessage';
     span.innerText=message;
+    email.classList.remove("input-error-border");
 }
 function emailFormat(email){
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
